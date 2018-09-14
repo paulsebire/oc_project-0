@@ -64,7 +64,8 @@ public class Product {
 	}
 
 	public double getInventoryPrice() {
-		// TODO Auto-generated method stub
-		return 0.0;
-	}
+		double inventoryprice=0.0; //add new variable
+		inventoryprice=getPrice()*getQuantity(); //set the value by multiplying the price by the quantity
+		return inventoryprice; //return the price of the stock
+}
 }
