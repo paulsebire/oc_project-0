@@ -52,7 +52,11 @@ public class Product {
 	}
 
 	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+		if (quantity<0) //test if quantity under 0
+		{
+			quantity=0; //set to 0 if the quantity is negative
+		}
+		else this.quantity = quantity;
 	}
 
 	public double getPrice() {
@@ -60,9 +64,20 @@ public class Product {
 	}
 
 	public void setPrice(double price) {
+		if (price<0) //test if price under 0
+		{
+			price=0; //set to 0 if the price is negative
+		}
+		else if (price>1000) //test if price above 1000
+			{
+				price=1000; //set to 1000 if the price above 1000
+			}
 		this.price = price;
+		
 	}
 
+	
+	
 	public double getInventoryPrice() {
 		double inventoryprice=0.0; //add new variable
 		inventoryprice=getPrice()*getQuantity(); //set the value by multiplying the price by the quantity
