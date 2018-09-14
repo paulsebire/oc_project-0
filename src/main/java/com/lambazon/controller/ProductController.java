@@ -29,10 +29,14 @@ public class ProductController {
 		model.addAttribute("prod", productService.product(id));
 		return "product";
 	}
-	
-	private double calculateTotalInventoryAmount() {
-		// TODO fix calculation
-		 return 123456.78;
-		
+private double calculateTotalInventoryAmount() {
+				
+		double totalinventoryamount = 0.0; //add new variable
+		for (Product p : productService.products()) { //for each product
+			totalinventoryamount+=p.getInventoryPrice(); //stock and implement the amount of each stock to the value of the global stock
+		}
+
+		return totalinventoryamount;		
 	}
+
 }
