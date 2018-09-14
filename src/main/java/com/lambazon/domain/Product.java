@@ -72,12 +72,9 @@ public class Product {
 			{
 				price=1000; //set to 1000 if the price above 1000
 			}
-		this.price = price;
-		
+		this.price = price;		
 	}
 
-	
-	
 	public double getInventoryPrice() {
 		double inventoryprice=0.0; //add new variable
 		inventoryprice=getPrice()*getQuantity(); //set the value by multiplying the price by the quantity
